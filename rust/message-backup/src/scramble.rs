@@ -563,6 +563,7 @@ impl Visit<Scrambler> for proto::Group {
             hideStory: _,
             storySendMode: _,
             snapshot,
+            blocked: _,
             special_fields: _,
         } = self;
         masterKey.randomize(&mut visitor.rng);
@@ -1969,7 +1970,6 @@ impl Visit<Scrambler> for proto::DirectStoryReplyMessage {
     fn accept(&mut self, visitor: &mut Scrambler) {
         let Self {
             reactions,
-            storySentTimestamp: _,
             reply,
             special_fields: _,
         } = self;
